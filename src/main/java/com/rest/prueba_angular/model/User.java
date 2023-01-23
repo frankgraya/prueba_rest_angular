@@ -1,15 +1,9 @@
 package com.rest.prueba_angular.model;
-
-import lombok.*;
-import org.hibernate.Hibernate;
+import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Objects;
 
-@Getter
-@Setter
-@ToString
-@RequiredArgsConstructor
+@Data
 @Entity
 @Table(name = "usuarios")
 public class User {
@@ -27,16 +21,14 @@ public class User {
     @Column(name = "email",  nullable = false)
     private String email;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        User user = (User) o;
-        return id != null && Objects.equals(id, user.id);
+
+    public User() {
     }
 
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
+    public User(String password, String nombre, String apellidos, String email) {
+        this.password = password;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.email = email;
     }
 }
