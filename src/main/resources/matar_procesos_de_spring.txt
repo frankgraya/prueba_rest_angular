@@ -1,0 +1,10 @@
+netstat -ano | findstr LISTENING | findstr 8080
+
+taskkill -PID 11808 -F
+
+LINUX 
+
+sudo netstat -anp | grep ':80'
+
+sudo kill -9 "ID DEL PROCESO"
+
