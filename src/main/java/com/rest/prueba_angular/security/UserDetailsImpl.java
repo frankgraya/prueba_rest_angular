@@ -15,7 +15,9 @@ public class UserDetailsImpl implements UserDetails {
 
     private final Usuario usuario;
 
-    /** Util pora permisos o roles pero retornaremos una lista vacia
+    /**
+     * Util pora permisos o roles pero retornaremos una lista vacia
+     *
      * @return
      */
 
@@ -32,7 +34,9 @@ public class UserDetailsImpl implements UserDetails {
         return usuario.getPassword();
     }
 
-    /** configurar para cambiar de usuario o email
+    /**
+     * configurar para cambiar de usuario o email
+     *
      * @return
      */
     @Override
@@ -40,8 +44,8 @@ public class UserDetailsImpl implements UserDetails {
         return usuario.getEmail();
     }
 
-
     // <editor-fold defaultstate="collapsed" desc="Metodos para controles de acceso">
+
     /**
      * @return
      */
@@ -75,9 +79,7 @@ public class UserDetailsImpl implements UserDetails {
     }
 
     // </editor-fold>
-
-
-    public String getNombre(){
+    public String getNombre() {
         return usuario.getNombre();
     }
 }

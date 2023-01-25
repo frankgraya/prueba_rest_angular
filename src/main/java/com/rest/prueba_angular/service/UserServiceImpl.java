@@ -1,8 +1,6 @@
 package com.rest.prueba_angular.service;
 
 import com.rest.prueba_angular.model.Usuario;
-import com.rest.prueba_angular.repository.UserRepository;
-
 import com.rest.prueba_angular.repository.UsuarioRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,16 +30,13 @@ public class UserServiceImpl implements UsuarioService {
 
     @Override
     public Usuario findByIdUsuario(long id) {
-
         Optional<Usuario> optional = usuarioRepository.findById(id);
-
         Usuario usuario = null;
-        if (((Optional<?>) optional).isPresent()) {
-            usuario = optional.get();
-        } else {
-            throw new RuntimeException(" Usuario no se encontro por id : " + id);
-        }
-
+                if (((Optional<?>) optional).isPresent()) {
+                    usuario = optional.get();
+                } else {
+                    throw new RuntimeException(" Usuario no se encontro por id : " + id);
+                }
         log.info("se veb rodos los usuarios");
         return usuario;
 

@@ -8,11 +8,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 public class UserDetailServiceImpl implements UserDetailsService {
-
-
     @Autowired
     private UsuarioRepository usuarioRepository;
-
 
     /**
      * @param email ESTE PARAMETRO SE PUEDE MODIFICAR PARA QUE SEA POR USUARIO
