@@ -1,7 +1,6 @@
 package com.rest.prueba_angular.controller;
 
 import com.rest.prueba_angular.model.Contactos;
-import com.rest.prueba_angular.model.User;
 import com.rest.prueba_angular.repository.ContactosRepository;
 import com.rest.prueba_angular.service.ContactosService;
 import lombok.AllArgsConstructor;

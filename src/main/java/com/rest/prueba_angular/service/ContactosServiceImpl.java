@@ -1,9 +1,8 @@
 package com.rest.prueba_angular.service;
 
 import com.rest.prueba_angular.model.Contactos;
-import com.rest.prueba_angular.model.User;
 import com.rest.prueba_angular.repository.ContactosRepository;
-import com.rest.prueba_angular.repository.UserRepository;
+import com.rest.prueba_angular.repository.UsuarioRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +14,7 @@ import java.util.Optional;
 @Service
 public class ContactosServiceImpl implements ContactosService {
     @Autowired
-    private UserRepository userRepository;
+    private UsuarioRepository usuarioRepository;
 
 
     @Autowired
@@ -29,7 +28,7 @@ public class ContactosServiceImpl implements ContactosService {
 
     @Override
     public void deleteContactos(long id) {
-        userRepository.deleteById(id);
+        usuarioRepository.deleteById(id);
         log.info("Se borro usuario con el id " + id);
     }
 

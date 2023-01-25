@@ -1,7 +1,6 @@
 package com.rest.prueba_angular.service;
 
 import com.rest.prueba_angular.model.Contactos;
-import com.rest.prueba_angular.model.User;
 
 import java.util.List;
 

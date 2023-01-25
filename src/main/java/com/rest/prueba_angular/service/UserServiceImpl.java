@@ -1,8 +1,9 @@
 package com.rest.prueba_angular.service;
 
-import com.rest.prueba_angular.model.User;
+import com.rest.prueba_angular.model.Usuario;
 import com.rest.prueba_angular.repository.UserRepository;
 
+import com.rest.prueba_angular.repository.UsuarioRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,43 +13,43 @@ import java.util.Optional;
 
 @Slf4j
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UsuarioService {
 
     @Autowired
-    private UserRepository userRepository;
+    private UsuarioRepository usuarioRepository;
 
     @Override
-    public User saveUser(User user) {
-        log.info("se guardo usuario" + user);
-        return userRepository.save(user);
+    public Usuario saveUsuario(Usuario usuario) {
+        log.info("se guardo usuario" + usuario);
+        return usuarioRepository.save(usuario);
     }
 
     @Override
-    public void deleteUser(long id) {
-        userRepository.deleteById(id);
+    public void deleteUsuario(long id) {
+        usuarioRepository.deleteById(id);
         log.info("Se borro usuario con el id " + id);
     }
 
     @Override
-    public User findByIdUser(long id) {
+    public Usuario findByIdUsuario(long id) {
 
-        Optional<User> optional = userRepository.findById(id);
+        Optional<Usuario> optional = usuarioRepository.findById(id);
 
-        User user = null;
+        Usuario usuario = null;
         if (((Optional<?>) optional).isPresent()) {
-            user = optional.get();
+            usuario = optional.get();
         } else {
             throw new RuntimeException(" Usuario no se encontro por id : " + id);
         }
 
         log.info("se veb rodos los usuarios");
-        return user;
+        return usuario;
 
     }
 
     @Override
-    public List<User> findAllUser() {
-        log.info(" Se encontraron todos los usuarios" + userRepository.findAll());
-        return userRepository.findAll();
+    public List<Usuario> findAllUsuario() {
+        log.info(" Se encontraron todos los usuarios" + usuarioRepository.findAll());
+        return usuarioRepository.findAll();
     }
 }
